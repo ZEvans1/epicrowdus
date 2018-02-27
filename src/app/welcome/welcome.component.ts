@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Project } from '../project.model';
 import { Router } from '@angular/router';
+import { Project } from '../project.model';
 import { ProjectService } from '../project.service';
 import { FirebaseListObservable } from 'angularfire2/database';
 
@@ -17,7 +17,7 @@ export class WelcomeComponent implements OnInit {
   constructor(private router: Router, private projectService: ProjectService) { }
 
   ngOnInit() {
-    this.projects = this.projectService.getProject();
+    this.projects = this.projectService.getProjects();
   }
 
   goToDetailPage(clickedProject){
