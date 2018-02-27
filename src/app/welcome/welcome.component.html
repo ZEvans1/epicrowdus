@@ -1,3 +1,10 @@
-<p>
-  welcome works!
-</p>
+<h2>Welcome to EpiCrowdfund</h2>
+
+<div *ngFor="let project of projects" class="panel panel-default">
+  <div class="panel-body">
+    <h3(click)="gotToDetailPage(project)"><em>{{project.title}}</em></h3>
+    <div class="">
+
+    </div>
+  </div>
+</div>
