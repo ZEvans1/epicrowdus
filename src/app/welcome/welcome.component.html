@@ -23,9 +23,5 @@
 <div *ngFor="let project of projects | async" class="panel panel-default">
   <div class="panel-body">
     <h3 (click)="goToDetailPage(project)"> {{project.title}} </h3>
-    <div class="">
-
-    </div>
-    <app-project-detail [projectToFund]="project"></app-project-detail>
   </div>
 </div>

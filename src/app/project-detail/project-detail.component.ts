@@ -12,7 +12,7 @@ import { ProjectService } from '../project.service';
   providers: [ProjectService]
 })
 export class ProjectDetailComponent implements OnInit {
-  @Input() projectToFund;
+  @Input() projectToFund: Project;
   @Output() addFundsSender = new EventEmitter();
   projectId: string;
   projectToDisplay;
@@ -27,11 +27,18 @@ export class ProjectDetailComponent implements OnInit {
     this.route.params.forEach((urlParameters) => {
       this.projectId = urlParameters['id'];
     });
-    this.projectToDisplay = this.projectService.getProjectById(this.projectId);
+    this.projectService.getProjectById(this.projectId).subscribe(dataLastEmittedFromObserver => {
+     this.projectToDisplay = dataLastEmittedFromObserver;
+
+     console.log(this.projectToDisplay);
+   })
+
   }
 
   addFunds(donation) {
-    this.projectToFund.fundsActual += donation;
+    this.projectToDisplay.fundsActual += parseInt(donation);
+    this.projectService.updateProject(this.projectToDisplay);
+    console.log(this.projectToDisplay.fundsActual);
 
   }
 
