@@ -5,4 +5,10 @@
   <p>{{(projectToDisplay | async)?.description}}</p>
   <p> {{(projectToDisplay | async)?.fundsActual}} / {{(projectToDisplay | async)?.fundsGoal}}</p>
 
+  <p>Would you like to donate to this project?</p>
+  <div>
+    <label>Donation Amount($): </label>
+    <input #donation>
+    <button (click)="addFunds(donation.value)">Donate</button>
+  </div>
 </div>

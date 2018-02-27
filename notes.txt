@@ -1,6 +1,6 @@
 ***As a user, I want to see a list of all projects, ideas, and charitable acts that are seeking funding.
 
-As a user, I want to click a project to see more details.
+***As a user, I want to click a project to see more details.
 
 ***As a user, I'd like to know the details of a project before I decide whether to fund it. Including things like a name, the project starters/managers, a description, the amount of money the project is hoping to raise, what they'll do with the funds raised, and whether I get any cool swag or rewards for funding a project.
 

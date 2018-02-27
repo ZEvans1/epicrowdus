@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import { FirebaseObjectObservable } from 'angularfire2/database';
@@ -11,6 +11,8 @@ import { ProjectService } from '../project.service';
   styleUrls: ['./project-detail.component.css']
 })
 export class ProjectDetailComponent implements OnInit {
+  @Input() projectToFund;
+  @Output() addFundsSender = new EventEmitter();
   projectId: string;
   projectToDisplay;
 
@@ -25,6 +27,11 @@ export class ProjectDetailComponent implements OnInit {
       this.projectId = urlParameters['id'];
     });
     this.projectToDisplay = this.projectService.getProjectById(this.projectId);
+  }
+
+  addFunds(donation) {
+    this.projectToFund.fundsActual += donation;
+
   }
 
 }
