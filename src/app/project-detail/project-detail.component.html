@@ -1,8 +1,8 @@
 <div>
-  <h3>{{(projectToDisplay | async)?.title}}</h3>
-  <h4>{{(projectToDisplay | async)?.team}}</h4>
-  <p>{{(projectToDisplay | async)?.fundsPlan}}</p>
-  <p>{{(projectToDisplay | async)?.description}}</p>
+  <h3>Project Title: {{(projectToDisplay | async)?.title}}</h3>
+  <h4>Project Owner: {{(projectToDisplay | async)?.team}}</h4>
+  <p>Project Plan: {{(projectToDisplay | async)?.fundsPlan}}</p>
+  <p>Project Description: {{(projectToDisplay | async)?.description}}</p>
   <p> {{(projectToDisplay | async)?.fundsActual}} / {{(projectToDisplay | async)?.fundsGoal}}</p>
 
   <p>Would you like to donate to this project?</p>

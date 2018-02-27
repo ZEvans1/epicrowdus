@@ -20,6 +20,11 @@ export class WelcomeComponent implements OnInit {
     this.projects = this.projectService.getProjects();
   }
 
+  submitForm(title: string, description: string, team: string[], fundsPlan: string, fundsGoal: number) {
+    var newProject: Project = new Project(title, description, team, fundsPlan, fundsGoal);
+    this.projectService.addProject(newProject);
+  }
+
   goToDetailPage(clickedProject){
     this.router.navigate(['projects', clickedProject.$key])
   }

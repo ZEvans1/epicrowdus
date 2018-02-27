@@ -1,8 +1,28 @@
 <h2>Welcome to EpiCrowdfund</h2>
 
-<div *ngFor="let project of projects" class="panel panel-default">
+<p>Add a new project here: </p>
+<div class="form-control">
+  <label>Project Title</label>
+  <input #newTitle>
+  <br>
+  <label>Project Description</label>
+  <textarea #newDescription></textarea>
+  <br>
+  <label>Project Owner</label>
+  <input #newOwner>
+  <br>
+  <label>Plan</label>
+  <textarea #newPlan></textarea>
+  <br>
+  <label>Funds Goal</label>
+  <input #newGoal>
+  <br>
+  <button class="btn btn-outline-primary" (click)="submitForm(newTitle.value, newDescription.value, newOwner.value, newPlan.value, newGoal.value); newTitle.value =''; newDescription.value =''; newOwner.value =''; newPlan.value =''; newGoal.value ='' ">Create Project</button>
+</div>
+
+<div *ngFor="let project of projects | async" class="panel panel-default">
   <div class="panel-body">
-    <h3(click)="gotToDetailPage(project)"><em>{{project.title}}</em></h3>
+    <h3 (click)="goToDetailPage(project)"> {{project.title}} </h3>
     <div class="">
 
     </div>

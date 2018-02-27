@@ -8,7 +8,8 @@ import { ProjectService } from '../project.service';
 @Component({
   selector: 'app-project-detail',
   templateUrl: './project-detail.component.html',
-  styleUrls: ['./project-detail.component.css']
+  styleUrls: ['./project-detail.component.css'],
+  providers: [ProjectService]
 })
 export class ProjectDetailComponent implements OnInit {
   @Input() projectToFund;
