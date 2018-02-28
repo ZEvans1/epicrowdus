@@ -9,6 +9,8 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ProjectDetailComponent } from './project-detail/project-detail.component';
+import { GoalPipe } from './goal-pipe.pipe';
+import { CompletedPipe } from './completed.pipe';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -22,7 +24,9 @@ export const firebaseConfig = {
   declarations: [
     AppComponent,
     WelcomeComponent,
-    ProjectDetailComponent
+    ProjectDetailComponent,
+    GoalPipe,
+    CompletedPipe
   ],
   imports: [
     BrowserModule,

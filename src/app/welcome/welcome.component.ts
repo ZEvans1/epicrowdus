@@ -14,6 +14,9 @@ export class WelcomeComponent implements OnInit {
   projects: FirebaseListObservable<any[]>;
   currentRoute: string = this.router.url;
 
+  filterByGoal: string = "allProjects";
+  filterByCompleted: string = "allProjects";
+
   constructor(private router: Router, private projectService: ProjectService) { }
 
   ngOnInit() {
@@ -27,6 +30,14 @@ export class WelcomeComponent implements OnInit {
 
   goToDetailPage(clickedProject){
     this.router.navigate(['projects', clickedProject.$key])
+  }
+
+  onChangeGoal(optionFromMenu) {
+    this.filterByGoal = optionFromMenu;
+  }
+
+  onChangeComplete(optionFromMenu){
+    this.filterByCompleted = optionFromMenu;
   }
 
 }
