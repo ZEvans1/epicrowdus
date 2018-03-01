@@ -1,14 +1,14 @@
 <div>
-  <h3>Project Title: {{projectToDisplay?.title}}</h3>
-  <h4>Project Owner: {{projectToDisplay?.team}}</h4>
-  <p>Project Plan: {{projectToDisplay?.fundsPlan}}</p>
-  <p>Project Description: {{projectToDisplay?.description}}</p>
+  <p><strong>Project Title:</strong> {{projectToDisplay?.title}}</p>
+  <p><strong>Project Owner:</strong> {{projectToDisplay?.team}}</p>
+  <p><strong>Project Plan:</strong> {{projectToDisplay?.fundsPlan}}</p>
+  <p><strong>Project Description:</strong> {{projectToDisplay?.description}}</p>
   <p> $ {{projectToDisplay?.fundsActual}} / $ {{projectToDisplay?.fundsGoal}}</p>
 
   <p>Would you like to donate to this project?</p>
   <div>
     <label>Donation Amount($): </label>
     <input #donation>
-    <button (click)="addFunds(donation.value);">Donate</button>
+    <button class="btn btn-outline-secondary" (click)="addFunds(donation.value);">Donate</button>
   </div>
 </div>

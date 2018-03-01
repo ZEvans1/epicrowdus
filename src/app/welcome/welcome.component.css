@@ -1,0 +1,27 @@
+h2 {
+  text-align: center;
+}
+
+.project-button {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.project-form {
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.selectors {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+}

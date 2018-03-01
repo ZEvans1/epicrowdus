@@ -1,37 +1,42 @@
 <h2>Welcome to EpiCrowdfund</h2>
 
 <p>Add a new project here: </p>
-<div class="form-control">
+<div class="form-control project-form">
   <label>Project Title</label>
   <input #newTitle>
   <br>
   <label>Project Description</label>
+  <br>
   <textarea #newDescription></textarea>
   <br>
   <label>Project Owner</label>
   <input #newOwner>
   <br>
   <label>Plan</label>
+  <br>
   <textarea #newPlan></textarea>
   <br>
   <label>Funds Goal</label>
   <input #newGoal>
   <br>
-  <button class="btn btn-outline-primary" (click)="submitForm(newTitle.value, newDescription.value, newOwner.value, newPlan.value, newGoal.value); newTitle.value =''; newDescription.value =''; newOwner.value =''; newPlan.value =''; newGoal.value ='' ">Create Project</button>
+  <button class="btn btn-outline-primary project-button" (click)="submitForm(newTitle.value, newDescription.value, newOwner.value, newPlan.value, newGoal.value); newTitle.value =''; newDescription.value =''; newOwner.value =''; newPlan.value =''; newGoal.value ='' ">Create Project</button>
 </div>
 
-<select (change)="onChangeGoal($event.target.value)">
-  <option value="allProjects" selected="selected">All Tasks</option>
-  <option value="low">Low $ Goals ( < $100 )</option>
-  <option value="high">High $ Goals ( > $20,000 )</option>
-</select>
+<div class="selectors">
+  <select (change)="onChangeGoal($event.target.value)">
+    <option value="allProjects" selected="selected">All Tasks</option>
+    <option value="low">Low $ Goals ( < $100 )</option>
+    <option value="high">High $ Goals ( > $20,000 )</option>
+  </select>
 
-<select (change)="onChangeComplete($event.target.value)">
-  <option value="allProjects" selected="selected">All Tasks</option>
-  <option value="completed">Completed Goals</option>
-  <option value="incomplete">Incomplete</option>
-</select>
+  <select (change)="onChangeComplete($event.target.value)">
+    <option value="allProjects" selected="selected">All Tasks</option>
+    <option value="completed">Completed Goals</option>
+    <option value="incomplete">Incomplete</option>
+  </select>
+</div>
 
+<h2>Projects For You To Browse or Fund</h2>
 <div *ngFor="let project of projects | async | goalPipe:filterByGoal | completed:filterByCompleted" class="panel panel-default">
   <div class="panel-body">
     <h3 (click)="goToDetailPage(project)"> {{project.title}} </h3>
