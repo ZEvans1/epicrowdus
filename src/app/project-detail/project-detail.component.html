@@ -11,4 +11,9 @@
     <input #donation>
     <button class="btn btn-outline-secondary" (click)="addFunds(donation.value);">Donate</button>
   </div>
+
+  <div class="delete-button">
+    <p>Would you like to cancel your project?</p>
+    <button class="btn btn-outline-danger" (click)="removeProject(projectToDisplay)" routerLink="">End Project</button>
+  </div>
 </div>

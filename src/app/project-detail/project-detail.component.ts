@@ -38,8 +38,10 @@ export class ProjectDetailComponent implements OnInit {
   addFunds(donation) {
     this.projectToDisplay.fundsActual += parseInt(donation);
     this.projectService.updateProject(this.projectToDisplay);
-    console.log(this.projectToDisplay.fundsActual);
+  }
 
+  removeProject(project) {
+    this.projectService.deleteProject(project);
   }
 
 }
