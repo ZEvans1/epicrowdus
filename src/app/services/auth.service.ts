@@ -12,9 +12,14 @@ export class AuthService {
     this.user = _firebaseAuth.authState;
   }
 
-  signInRegular(email, password) {
+  signInNew(email, password) {
    const credential = firebase.auth.EmailAuthProvider.credential( email, password );
    return this._firebaseAuth.auth.createUserWithEmailAndPassword(email, password)
 }
+
+  signIn(email, password) {
+   const credential = firebase.auth.EmailAuthProvider.credential( email, password );
+   return this._firebaseAuth.auth.signInWithEmailAndPassword(email, password)
+  }
 
 }
